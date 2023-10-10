@@ -1,0 +1,40 @@
+   <!-- ======= Team Section ======= -->
+   <div id="team" class="our-team-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Guru GTK</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="carousel owl-carousel">
+          <?php
+                foreach ($guru->result_array() as $i) :
+                  $kode=$i['id_guru'];
+                  $nama_guru=$i['nama_guru'];
+                  $keterangan=$i['keterangan'];
+                  $fb=$i['fb'];
+                  $ig=$i['ig'];
+                  $twiter=$i['twiter'];
+                  $photo=$i['photo'];
+                 ?>
+              <div class="card card-1">
+                <div class="guru">
+                  <div class="img-area">
+                    <img src="<?php echo base_url().'assets/images/'.$photo;?>" alt="">
+                    </div>
+                    <div class="nama-area text-center">
+                      <h4 style="color: white; font-size: 0.3em;"><?php echo $nama_guru ;?></h4>
+                    </div>
+                    <p class="ngajar" style=""><?php echo $keterangan ;?></p>
+                    <span class="ic-guru"><i class="fa fa-envelope gmail" style=" color: #50267a; margin-top: -50px;"><?php echo $fb ;?></i></span>
+                </div>
+              </div>         
+              <?php endforeach ;?>   
+          </div>  
+          <!-- End column -->
+        </div>
+      </div>
+    </div><!-- End Team Section -->

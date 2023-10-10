@@ -1,0 +1,56 @@
+<!-- Start Testimonials -->
+  <div class="testimonials-area">
+    <div class="testi-inner area-padding">
+      <div class="testi-overly"></div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 wow slideInRight" data-wow-duration="2s" data-wow-delay=".2s">
+            <!-- Start testimonials Start -->
+            <div class="testimonial-content text-center">
+              <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
+              <!-- start testimonial carousel -->
+              <div class="testimonial-carousel">
+              <?php
+                foreach ($testi->result_array() as $i) :
+                  $kode=$i['testimoni_id'];
+                  $nama=$i['testimoni_nama'];
+                  $isi=$i['testimoni_isi'];
+                  $email=$i['testimoni_email'];
+                  $tanggal=$i['testimoni_tanggal'];
+                  $gambar=$i['gambar'];
+                 ?>
+                <div class="single-testi">
+                  <div class="testi-text">
+                    <p>
+                      <?php echo $isi;?>
+                    </p>
+                    <h6><?php echo $nama;?></h6>
+                  </div>
+                </div>
+              <?php endforeach;?>
+                <!-- End single item -->
+              </div>
+            </div>
+            <!-- End testimonials end -->
+          </div>
+          <!-- End Right Feature -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Testimonials -->
+  
+  <!-- Start Aplikasi Area -->
+  <div class="suscribe-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12 wow slideInLeft" data-wow-duration="2s" data-wow-delay=".2s">
+          <div class="suscribe-text text-center">
+            <h3>Daftarkan diri anda sekarang juga</h3>
+            <a class="sus-btn" target="_blank" href="<?php echo base_url('daftar');?>">Daftar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Aplikasi Area -->

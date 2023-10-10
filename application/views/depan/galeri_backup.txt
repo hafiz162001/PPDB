@@ -1,0 +1,56 @@
+
+
+ <!-- Start portfolio Area -->
+  <div id="galery" class="portfolio-area area-padding fix">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+          <div class="section-headline text-center">
+            <br>
+            <br>
+            <h2>Gallery dan kegiatan </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Start galeri -page -->
+        <div class="awesome-project-1 fix">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow slideInRight" data-wow-duration="2s" data-wow-delay=".2s">
+            <div class="awesome-menu ">
+              <ul class="project-menu">
+                <li>
+                  <a href="#" class="active" data-filter="*">All</a>
+                </li>
+                <?php
+                    foreach ($alb->result() as $row) : ?>
+                <li>
+                  <a href="#" data-filter=".<?php echo $row->album_id;?>"><?php echo $row->album_nama;?></a>
+                </li>
+              <?php endforeach;?>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="awesome-project-content wow slideInLeft" data-wow-duration="2s" data-wow-delay=".2s">
+          <?php foreach ($gal->result() as $row) : ?>
+          <div class="col-md-4 col-sm-4 col-xs-12 design <?php echo $row->galeri_album_id;?>">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="<?php echo base_url().'assets/images/galery/'.$row->galeri_gambar;?>" alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="venobox" data-gall="myGallery" href="<?php echo base_url().'assets/images/galery/'.$row->galeri_gambar;?>">
+                      <h4><?php echo $row->galeri_judul;?></h4>
+                      <span><?php echo $row->album_nama;?></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach;?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- galeri end -->
